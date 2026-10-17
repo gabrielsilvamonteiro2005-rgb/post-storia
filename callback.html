@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authorization complete</title>
+<style>body{font-family:system-ui,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1rem;line-height:1.6}code{word-break:break-all}</style></head>
+<body>
+<h1>Authorization complete</h1>
+<p>You can close this page and return to the computer where the tool is installed.</p>
+<p id="msg"></p>
+<script>
+  var p = new URLSearchParams(location.search);
+  document.getElementById("msg").textContent = p.get("error") ? "Authorization error: " + p.get("error") : (p.get("code") ? "Authorization received." : "");
+</script>
+</body></html>
